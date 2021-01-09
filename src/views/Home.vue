@@ -1,18 +1,29 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
+
+  <template>
+    <v-container>
+      <v-row >
+        <v-col
+            v-for="n in 8"
+            :key="n"
+            cols="12"
+            sm="4"
+        >
+          <graphItem></graphItem>
+        </v-col>
+      </v-row>
+    </v-container>
+  </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import graphItem from "../components/graphItem";
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+name: "Home",
+  components:{
+    graphItem,
+  },
 }
 </script>
+
+<style scoped>
+
+</style>
