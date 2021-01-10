@@ -7,10 +7,10 @@
     <v-list-item three-line>
       <v-list-item-content>
         <div class="overline mb-4">
-          Date: 2002/05/23
+          Date: {{ graph.date | moment }}
         </div>
         <v-list-item-title class="headline mb-1">
-          Location: Galle
+          Location: {{ graph.location }}
         </v-list-item-title>
         <v-list-item-subtitle></v-list-item-subtitle>
       </v-list-item-content>
@@ -30,8 +30,15 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
-name: "graphItem"
+name: "graphItem",
+  props:['graph'],
+  filters: {
+    moment: function (date) {
+      return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+    }
+  }
 }
 </script>
 
