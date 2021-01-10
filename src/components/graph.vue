@@ -2,7 +2,7 @@
   <div class="small">
     <h3>{{ this.location }}</h3>
     <h3>{{ this.date | moment}}</h3>
-    <line-chart :chart-data="datacollection"></line-chart>
+    <line-chart :chart-data="datacollection" :options="this.options"></line-chart>
   </div>
 </template>
 
@@ -19,7 +19,11 @@ export default {
   data: () => ({
     datacollection: null,
     location: '',
-    date: ''
+    date: '',
+    options: {
+      responsive: true,
+      maintainAspectRatio: false
+    }
 
   }),computed:{
     ...mapGetters(["allGraphs"]),
@@ -53,8 +57,6 @@ export default {
           }
         ]
       }
-
-
     },
   },
 
