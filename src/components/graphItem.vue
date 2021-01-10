@@ -22,6 +22,7 @@
           outlined
           rounded
           text
+          @click="viewGraph(graph._id)"
       >
         View
       </v-btn>
@@ -34,6 +35,11 @@ import moment from 'moment'
 export default {
 name: "graphItem",
   props:['graph'],
+  methods:{
+    viewGraph(graphId){
+      this.$router.push(`/${graphId}`)
+    }
+  },
   filters: {
     moment: function (date) {
       return moment(date).format('MMMM Do YYYY, h:mm:ss a');

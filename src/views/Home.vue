@@ -9,7 +9,6 @@
             sm="4"
         >
           <graph-item v-bind:graph="graph"></graph-item>
-<!--        <h1>{{ graph.date }}</h1>-->
         </v-col>
       </v-row>
     </v-container>

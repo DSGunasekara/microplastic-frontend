@@ -20,7 +20,7 @@ export default new Vuex.Store({
         console.log(e);
         return e;
       }
-    }
+    },
   },
   mutations: {
     setGraphs: (state, graphs)=> state.graphs = graphs,
