@@ -21,6 +21,17 @@ export default new Vuex.Store({
         return e;
       }
     },
+    async updateGraph({ dispatch }, graph){
+      try {
+        console.log(graph)
+        const res = await axios.patch(`graph/${graph._id}`, {...graph})
+        console.log(res.data)
+        dispatch("getGraphs")
+      }catch (e){
+        console.log(e);
+        return e;
+      }
+    }
   },
   mutations: {
     setGraphs: (state, graphs)=> state.graphs = graphs,

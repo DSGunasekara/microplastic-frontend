@@ -19,12 +19,14 @@
 
     <v-card-actions>
       <v-btn
-          outlined
-          rounded
-          text
           @click="viewGraph(graph._id)"
       >
         View
+      </v-btn>
+      <v-btn
+          @click="updateGraph(graph._id)"
+      >
+        Update
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -38,6 +40,9 @@ name: "graphItem",
   methods:{
     viewGraph(graphId){
       this.$router.push(`/${graphId}`)
+    },
+    updateGraph(graphId){
+      this.$router.push(`/update/${graphId}`)
     }
   },
   filters: {
